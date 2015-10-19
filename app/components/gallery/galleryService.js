@@ -26,14 +26,7 @@ angular.module('cGalleryApp.services', []).factory('GalleryService', function($h
     };
 
     cGalleryAPI.getImage = function(id) {
-        return getFromUrl('assets/' + id).then(function(response) {
-            var url = response.data.fields.file.url;
-
-            return $http({
-                method: 'GET', 
-                url: url + "?w=300&h=500"
-            });
-        });
+        return getFromUrl('assets/' + id);
     };
 
     return cGalleryAPI;

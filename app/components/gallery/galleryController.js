@@ -9,8 +9,7 @@ angular.module('cGalleryApp.controllers', [])
 
     $scope.showFile = function(id) {
         GalleryService.getImage(id).then(function(rsp) {
-            $scope.currentFileUrl = rsp.config.url;
-            console.log($scope.currentFileUrl);
+            $scope.currentFileUrl = rsp.data.fields.file.url + '?w=300&h=500';
         });
     };
 
