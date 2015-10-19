@@ -1,0 +1,16 @@
+
+<div class="column1">
+    <div>Select item to view</div>
+    <ul ng-repeat="entry in entries">
+        <li ng-if="entry.fields.photo">
+            <span ng-click="showFile(entry.fields.photo.sys.id)">
+                <span ng-if="entry.fields.title">{{ entry.fields.title }}</span>
+                <span ng-if="!entry.fields.title">Untitled</span>
+            </span>
+        </li>
+    </ul>
+</div>
+
+<div class="column2">
+    <img src="{{currentFileUrl}}" />
+</div>
